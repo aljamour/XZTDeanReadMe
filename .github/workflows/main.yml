@@ -2,7 +2,7 @@ name: Daily Update Image
 
 on:
   schedule:
-    - cron: "45 8 * * *"
+    - cron: "45 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,19 +18,14 @@ jobs:
         with:
           ref: dist
           path: dist
-      - uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Etc/GMT+10"
       - name: Generate the snake files in './dist/'
-        uses: Platane/snk@v3
-        id: snake-gif
+        uses: Platane/snk/svg-only@v3
+        id: snake-svg
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-        env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push dist
         run: |
           git config --local user.name "github-actions"
