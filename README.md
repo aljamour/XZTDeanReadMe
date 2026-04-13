@@ -1,6 +1,6 @@
 <h1 align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/XZTDean/XZTDean/dist/username_header.svg" />
+    <img src="https://raw.githubusercontent.com/aljamour/XZTDeanReadMe/dist/username_header.svg" />
   </picture>
 </h1>
 <div align="center">
